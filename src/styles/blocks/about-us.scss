@@ -1,0 +1,41 @@
+.about-us {
+  @include content-padding-inline;
+  @include page-grid;
+
+  padding-block: 120px;
+  overflow-x: hidden;
+
+  @include on-tablet {
+    padding-block: 148px;
+  }
+
+  @include on-desktop {
+    padding-block: 120px;
+  }
+
+  & :nth-child(n) {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 0;
+
+    text-align: center;
+
+    @include on-small-desktop {
+      grid-column: 3 / -3;
+    }
+  }
+
+  & :first-child {
+    margin-bottom: 24px;
+
+    @include on-tablet {
+      margin-bottom: 16px;
+    }
+  }
+
+  & :last-child {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 33px;
+  }
+}

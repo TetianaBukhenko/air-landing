@@ -1,0 +1,47 @@
+.aside {
+  &__menu {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    background-color: var(--bg-color);
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+
+    transition: all $effect-duration;
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+
+    &--hidden {
+      transform: translateX(-100%);
+      opacity: 1;
+    }
+
+    &__icons {
+      width: 100%;
+      justify-content: space-around;
+    }
+  }
+
+  &__nav {
+    @include content-padding-inline;
+
+    padding-top: 30px;
+
+    &--list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}

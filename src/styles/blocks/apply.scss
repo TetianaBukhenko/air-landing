@@ -1,0 +1,85 @@
+.apply {
+  background-color: #fff;
+  text-align: center;
+  height: 100%;
+  box-shadow: 0 9px 18px 0 #25293108;
+
+  padding-top: 72px;
+  padding-bottom: 72px;
+  margin-bottom: 120px;
+
+  @include on-tablet {
+    padding-top: 63px;
+    padding-bottom: 220px;
+    margin-bottom: 0;
+  }
+
+  @include on-desktop {
+    padding-top: 72px;
+  }
+
+  &__container {
+    @include on-tablet {
+      background-image: url(../images/apply/Shapes--tablet.png);
+      background-size: cover;
+      background-position: top;
+      background-repeat: no-repeat;
+    }
+
+    @include on-small-desktop {
+      background-size: contain;
+      background-image: url(../images/apply/Shapes--laptop.png);
+    }
+  }
+
+  &__content {
+    @include content-padding-inline;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @include on-tablet {
+      padding-top: 137px;
+    }
+  }
+
+  &__header {
+    font-size: 44px;
+    line-height: 120%;
+
+    margin: 0;
+    margin-bottom: 24px;
+
+    @include on-tablet {
+      font-size: 52px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 56px;
+    max-width: 752px;
+
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 150%;
+
+    @include on-tablet {
+      font-size: 24px;
+      margin-bottom: 64px;
+    }
+  }
+}
+
+.pink-theme {
+  & .apply__container {
+    @include on-tablet {
+      background-image: url(../images/apply/Shapes--colored.png);
+    }
+
+    @include on-small-desktop {
+      background-image: url(../images/apply/Shapes--colored.png);
+    }
+  }
+}

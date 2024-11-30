@@ -1,0 +1,24 @@
+.heading {
+  font-family: Poppins, sans-serif;
+
+  &--main {
+    font-size: 52px;
+    line-height: 1.2em;
+    letter-spacing: 1px;
+
+    @include on-tablet {
+      font-style: 64px;
+    }
+  }
+
+  &--secondary {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    color: $dark-blue;
+  }
+
+  &--gray {
+    color: $dark-blue;
+  }
+}

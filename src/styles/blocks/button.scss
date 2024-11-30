@@ -1,0 +1,46 @@
+.button {
+  background-color: var(--button-color);
+  border: none;
+
+  &--rectangular {
+    width: 280px;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-family: Poppins, sans-serif;
+    color: $white;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+
+    border-radius: 8px;
+    transition:
+      transform $effect-duration,
+      background-color $effect-duration,
+      box-shadow $effect-duration;
+
+    &:hover {
+      transform: translateY(-0.25em);
+      box-shadow: 0 0.5em 0.5em -0.4em $dark-blue;
+      background-color: var(--button-hover-color);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      background-color: var(--button-color);
+      cursor: not-allowed;
+
+      &:hover {
+        transform: none;
+        box-shadow: none;
+      }
+    }
+
+    @include on-tablet {
+      width: 264px;
+    }
+  }
+}

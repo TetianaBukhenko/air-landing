@@ -1,0 +1,196 @@
+.testimonials {
+  @include content-padding-inline;
+  @include gap-btw-blocks;
+
+  overflow-x: hidden;
+
+  &__subheader {
+    color: $light-gray;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+
+    margin: 4px 0 16px;
+  }
+
+  &__header {
+    margin-top: 0;
+    margin-bottom: 48px;
+
+    @include on-tablet {
+      margin-bottom: 56px;
+      max-width: 200px;
+    }
+  }
+
+  &__container {
+    grid-column: 1 / -1;
+
+    @include on-small-desktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 20px;
+    }
+
+    @include on-desktop {
+      column-gap: 30px;
+    }
+  }
+}
+
+.pink-theme {
+  & .testimonial {
+    @for $i from 1 through length($colors) {
+      &:nth-child(#{$i}) {
+        --testimonial-color: #{nth($colors, $i)};
+      }
+    }
+  }
+}
+
+.testimonial {
+  --testimonial-color: var(--button-color);
+
+  background-color: $white;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 0;
+  box-shadow: 0 9px 18px 0 #25293108;
+
+  margin-bottom: 24px;
+
+  @include on-tablet {
+    margin-bottom: 30px;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 55px;
+
+    transition: transform $effect-duration;
+    transform: rotate(35deg);
+
+    &--container {
+      height: 196px;
+      width: 196px;
+      margin-bottom: 24px;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      @include on-tablet {
+        height: 250px;
+        width: 250px;
+      }
+
+      @include on-small-desktop {
+        height: 196px;
+        width: 196px;
+      }
+
+      @include on-desktop {
+        height: 250px;
+        width: 250px;
+      }
+    }
+
+    &--block {
+      height: 109px;
+      width: 44px;
+      background-color: var(--testimonial-color);
+      border-radius: 12px;
+      z-index: 0;
+
+      @include on-tablet {
+        height: 139px;
+        width: 56px;
+      }
+
+      @include on-small-desktop {
+        height: 109px;
+        width: 44px;
+      }
+
+      @include on-desktop {
+        height: 139px;
+        width: 56px;
+      }
+    }
+
+    &--image {
+      position: absolute;
+      height: 109px;
+      width: 109px;
+
+      @include on-tablet {
+        height: 140px;
+        width: 140px;
+      }
+
+      @include on-small-desktop {
+        height: 109px;
+        width: 109px;
+      }
+
+      @include on-desktop {
+        height: 140px;
+        width: 140px;
+      }
+    }
+  }
+
+  &:hover {
+    & .testimonial__top {
+      transform: rotate(135deg);
+    }
+
+    > p {
+      transform: scale(1.2);
+    }
+  }
+
+  &__icon--quote {
+    mask-image: url(../images/testimonials/icon--quote.png);
+
+    height: 24px;
+    width: 24px;
+    display: block;
+    background-color: var(--testimonial-color);
+    mask-position: center;
+    mask-size: cover;
+    mask-repeat: no-repeat;
+    margin-bottom: 8px;
+
+    @include on-tablet {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__text {
+    padding: 0 39px;
+    margin: 0;
+    margin-bottom: 16px;
+    text-align: center;
+    transition: transform $effect-duration;
+
+    @include on-tablet {
+      padding: 0 98px;
+    }
+
+    @include on-small-desktop {
+      padding: 0 39px;
+    }
+  }
+
+  &__name {
+    color: $dark-blue;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+}

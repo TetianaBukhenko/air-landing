@@ -1,3 +1,19 @@
-body {
-  margin: 0;
-}
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./utils/typography";
+@import "./blocks/page";
+@import "./blocks/header";
+@import "./blocks/nav";
+@import "./blocks/top-bar";
+@import "./blocks/menu";
+@import "./blocks/about-us";
+@import "./blocks/expertise";
+@import "./blocks/services";
+@import "./blocks/testimonials";
+@import "./blocks/apply";
+@import "./blocks/contact-us";
+@import "./blocks/form";
+@import "./blocks/pink-theme";
+@import "./blocks/footer";
+@import "./blocks/slider";
+@import "./blocks/button";

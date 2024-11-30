@@ -1,0 +1,62 @@
+.footer {
+  transition: background-color $effect-duration;
+  background-color: var(--bg-color);
+
+  &__logo {
+    margin-bottom: 48px;
+
+    @include on-tablet {
+      margin-bottom: 24px;
+    }
+
+    @include on-small-desktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__menu {
+    @include content-padding-inline;
+
+    padding-bottom: 80px;
+
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include on-small-desktop {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    pointer-events: all;
+
+    @include on-tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__nav__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    @include on-tablet {
+      width: 100%;
+      flex-direction: row;
+      gap: 18px;
+      justify-content: space-between;
+    }
+
+    @include on-small-desktop {
+      gap: 40px;
+      justify-content: flex-start;
+    }
+  }
+}

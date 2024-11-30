@@ -1,0 +1,90 @@
+@mixin hover($property, $toValue) {
+  transition: $property $effect-duration;
+  &:hover {
+    #{$property}: $toValue;
+  }
+}
+
+@mixin page-grid {
+  --columns: 2;
+
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include on-tablet {
+    --columns: 6;
+
+    column-gap: 30px;
+  }
+
+  @include on-small-desktop {
+    --columns: 12;
+
+    column-gap: 20px;
+  }
+
+  @include on-desktop {
+    gap: 30px;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-small-desktop {
+  @media (min-width: $small-desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin on-large-screen {
+  @media (min-width: $large-screen-min-width) {
+    @content;
+  }
+}
+
+@mixin content-padding-inline() {
+  padding-inline: 20px;
+
+  @include on-tablet {
+    padding-inline: 41px;
+  }
+
+  @include on-small-desktop {
+    padding-inline: 54px;
+  }
+
+  @include on-desktop {
+    padding-inline: 227px;
+  }
+
+  @include on-large-screen {
+    padding-inline: 707px;
+  }
+}
+
+@mixin gap-btw-blocks {
+  margin-bottom: 120px;
+
+  @include on-tablet {
+    margin-bottom: 148px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 120px;
+  }
+
+  @include on-large-screen {
+    margin-bottom: 120px;
+  }
+}

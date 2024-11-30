@@ -1,0 +1,62 @@
+p,
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  min-width: 320px;
+  scroll-behavior: smooth;
+
+  &__body {
+    --button-color: #2060f6;
+    --button-hover-color: #144ed4;
+    --bg-color: #2c2c2c;
+
+    padding: 0;
+    margin: 0;
+    background-color: #e9f0ff;
+    font-family: "Open Sans", sans-serif;
+    color: $gray;
+    font-size: 14px;
+    line-height: 150%;
+  }
+}
+
+.hide {
+  opacity: 0;
+  overflow-x: hidden;
+  transform: translate(5%);
+  transition: all 2s;
+}
+
+.hide-left {
+  opacity: 0;
+  overflow-x: hidden;
+  transform: translateX(-10%);
+  transition: all 2s;
+}
+
+.hide-right {
+  opacity: 0;
+  overflow-x: hidden;
+  transform: translateX(100%);
+  transition: all 1s;
+
+  @for $i from 1 through 4 {
+    &:nth-child(#{$i}) {
+      transition-delay: #{$i * 0.5}s;
+    }
+  }
+}
+
+.show {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+.hide-item {
+  transform: translateX(-30%);
+  transition: all 2s;
+}
